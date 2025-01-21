@@ -21,6 +21,7 @@ public class CollectableBehaviour : MonoBehaviour, ICollectable
 
     public void Collect()
     {
-        //TODO
+        GameplayEvents.SendOnCollectableCollected(m_collectableItemData);
+        Destroy(gameObject);
     }
 }

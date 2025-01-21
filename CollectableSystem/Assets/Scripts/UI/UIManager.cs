@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class UIManager : MonoSingleton<UIManager>
 {
-    [SerializeField] private IUIHandler m_startUI;
-    [SerializeField] private IUIHandler m_gameScreenUI;
-    [SerializeField] private IUIHandler m_inventoryUI;
-    [SerializeField] private Image m_background;
+    [SerializeField] private GameUI m_startUI;
+    [SerializeField] private GameUI m_gameScreenUI;
+    [SerializeField] private GameUI m_inventoryUI;
     
     private Dictionary<UITypes, IUIHandler> m_uiHandlerMap;
     private UITypes m_currentActiveUI;
@@ -18,10 +17,8 @@ public class UIManager : MonoSingleton<UIManager>
         m_uiHandlerMap = new Dictionary<UITypes, IUIHandler>()
         {
             { UITypes.START , m_startUI},
-            { UITypes.GAME_SCREEN , m_gameScreenUI},
             { UITypes.INVENTORY , m_inventoryUI}
         };
-
         GameplayEvents.OnShowUI += HandleOnShowUI;
         GameplayEvents.OnHideUI += HideUI;
     }
@@ -31,10 +28,14 @@ public class UIManager : MonoSingleton<UIManager>
         GameplayEvents.OnShowUI -= HandleOnShowUI;
         GameplayEvents.OnHideUI -= HideUI;
     }
-    
+
+    private void Start()
+    {
+        GameplayEvents.SendOnShowUI(UITypes.START);
+    }
+
     private void HideUI()
     {
-        m_background.gameObject.SetActive(false);
         foreach (KeyValuePair<UITypes,IUIHandler> uiHandlerPair in m_uiHandlerMap)
         {
             uiHandlerPair.Value.OnHide();
@@ -47,7 +48,6 @@ public class UIManager : MonoSingleton<UIManager>
             return;
         }
         HideUI();
-        m_background.gameObject.SetActive(true);
         IUIHandler uiHandler = m_uiHandlerMap.GetValueOrDefault(uiType);
         uiHandler.OnShow();
     }

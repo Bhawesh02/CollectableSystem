@@ -25,9 +25,9 @@ public class Player : MonoBehaviour
         GameplayEvents.OnHideUI -= HandleOnHideUI;
     }
 
-    private void HandleOnShowUI(UITypes obj)
+    private void HandleOnShowUI(UITypes uiType)
     {
-        m_isInputAllowed = false;
+        m_isInputAllowed = uiType == UITypes.INVENTORY;
     }
     private void HandleOnHideUI()
     {

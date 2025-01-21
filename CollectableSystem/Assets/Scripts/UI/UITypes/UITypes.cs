@@ -2,6 +2,5 @@
 {
     NULL,
     START,
-    GAME_SCREEN,
     INVENTORY
 }

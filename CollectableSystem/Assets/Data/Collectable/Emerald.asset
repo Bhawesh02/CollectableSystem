@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Emerald
   m_EditorClassIdentifier: 
   collectableName: Emerald
-  collectableIcon: {fileID: 0}
+  collectableIcon: {fileID: 21300000, guid: 44c33ca2528e8de40b79083846b136c4, type: 3}
   collectablePrefab: {fileID: 4430377628541622759, guid: e09154177dab4f545843cbe869408e27,
     type: 3}
