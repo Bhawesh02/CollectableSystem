@@ -20,6 +20,6 @@ public class InventoryManager : MonoSingleton<InventoryManager>
         {
             m_playerItemCollectedData[collectableItem] += 1;
         }
-        GameplayEvents.SendOnInventoryUpdated(m_playerItemCollectedData);
+        GameplayEvents.SendOnInventoryUpdated(collectableItem, m_playerItemCollectedData[collectableItem]);
     }
 }

@@ -10,11 +10,11 @@ public static class GameplayEvents
         OnCollectableCollected?.Invoke(collectableItem);
     }
     
-    public static event Action<Dictionary<CollectableItem, int>> OnInventoryUpdated;
+    public static event Action<CollectableItem, int> OnInventoryUpdated;
 
-    public static void SendOnInventoryUpdated(Dictionary<CollectableItem, int> collectableItemMap)
+    public static void SendOnInventoryUpdated(CollectableItem collectableItem, int count)
     {
-        OnInventoryUpdated?.Invoke(collectableItemMap);
+        OnInventoryUpdated?.Invoke(collectableItem, count);
     }
 
     public static event Action<UITypes> OnShowUI;
@@ -26,7 +26,7 @@ public static class GameplayEvents
     
     public static event Action OnHideUI;
 
-    public static void SendOnHideUi()
+    public static void SendOnHideUI()
     {
         OnHideUI?.Invoke();
     }
