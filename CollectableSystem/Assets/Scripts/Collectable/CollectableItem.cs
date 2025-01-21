@@ -6,5 +6,5 @@ public class CollectableItem : ScriptableObject
 {
     public string collectableName;
     public Sprite collectableIcon;
-    public CollectableBehaviour collectablePrefab;
+    public Material collectableMaterial;
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 public static class GameplayEvents
 {
-    public static event Action<CollectableItem> OnCollectableCollected;
+    public static event Action<CollectableItem, CollectableBehaviour> OnCollectableCollected;
 
-    public static void SendOnCollectableCollected(CollectableItem collectableItem)
+    public static void SendOnCollectableCollected(CollectableItem collectableItem, CollectableBehaviour collectableBehaviour)
     {
-        OnCollectableCollected?.Invoke(collectableItem);
+        OnCollectableCollected?.Invoke(collectableItem, collectableBehaviour);
     }
     
     public static event Action<CollectableItem, int> OnInventoryUpdated;

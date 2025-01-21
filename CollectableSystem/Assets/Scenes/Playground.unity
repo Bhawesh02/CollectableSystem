@@ -1342,6 +1342,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e6e9092a01f0e944d8a9f2264970bde7, type: 2}
   - {fileID: 11400000, guid: bc59ef9904b26ab4d819927d91f38f73, type: 2}
   - {fileID: 11400000, guid: dfea414a05be55f4ab897cbdce2cca5e, type: 2}
+  m_collectablePrefab: {fileID: 4430377628541622759, guid: e09154177dab4f545843cbe869408e27,
+    type: 3}
   m_spawnBound: {x: 50, y: 50}
   m_spawnCount: 100
 --- !u!1 &1526222946

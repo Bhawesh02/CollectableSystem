@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectableName: Saphire
   collectableIcon: {fileID: 21300000, guid: 00ce94660e6809e41933896b95df5353, type: 3}
-  collectablePrefab: {fileID: -1042989588937545455, guid: 7bd66e5d71cabe747a3d9db0fabd512c,
-    type: 3}
+  collectableMaterial: {fileID: 2100000, guid: 304ec0d8f4e7b474fa0068b3104923ac, type: 2}

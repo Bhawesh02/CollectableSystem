@@ -14,7 +14,7 @@ public class InventoryManager : MonoSingleton<InventoryManager>
         GameplayEvents.OnCollectableCollected -= HandleOnCollectableCollected;
     }
 
-    private void HandleOnCollectableCollected(CollectableItem collectableItem)
+    private void HandleOnCollectableCollected(CollectableItem collectableItem, CollectableBehaviour collectableBehaviour)
     {
         if (!m_playerItemCollectedData.TryAdd(collectableItem, 1))
         {
