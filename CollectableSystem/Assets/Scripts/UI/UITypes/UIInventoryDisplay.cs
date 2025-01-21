@@ -17,7 +17,7 @@ public class UIInventoryDisplay : GameUI
 
     private void OnDestroy()
     {
-        GameplayEvents.OnInventoryUpdated += HandleOnUIUpdate;
+        GameplayEvents.OnInventoryUpdated -= HandleOnUIUpdate;
     }
 
     private void HandleOnUIUpdate(CollectableItem collectableItem, int count)
